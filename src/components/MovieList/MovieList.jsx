@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function MovieList({ movies, location }) {
+const MovieList = ({ movies, location }) => {
   return (
     <ul>
       {movies.map((movie) => (
@@ -12,4 +12,6 @@ export default function MovieList({ movies, location }) {
       ))}
     </ul>
   );
-}
+};
+
+export default MovieList;

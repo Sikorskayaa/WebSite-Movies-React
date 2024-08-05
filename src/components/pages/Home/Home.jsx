@@ -2,33 +2,34 @@ import { useState, useEffect } from "react";
 import { fetchTrendingMovies } from "../../services/Api";
 import MovieList from "../../MovieList/MovieList";
 
-export default function HomePage() {
-  const [trendingMovies, setTrendingMovies] = useState([]);
+const Home = () => {
+  const [trendingMovie, setTrendingMovie] = useState([]);
 
   useEffect(() => {
-    async function fetchTrending() {
+    const fetchTrending = async () => {
       try {
         const movies = await fetchTrendingMovies();
         const filteredMovies = movies.filter(
           (movie) => movie.id && movie.title
         );
-        setTrendingMovies(filteredMovies);
+        setTrendingMovie(filteredMovies);
       } catch (error) {
-        console.error("Error fetching trending movies:", error);
-        setTrendingMovies([]);
+        console.log(error);
+        setTrendingMovie([]);
       }
-    }
+    };
     fetchTrending();
   }, []);
 
-  if (trendingMovies.length === 0) {
+  if (trendingMovie.length === 0) {
     return <p>No trending movies available.</p>;
   }
 
   return (
     <div>
-      <h2>Trending Today</h2>
-      <MovieList movies={trendingMovies} />
+      <h2>Trending Movies</h2>
+      <MovieList movies={trendingMovie} />
     </div>
   );
-}
+};
+export default Home;
