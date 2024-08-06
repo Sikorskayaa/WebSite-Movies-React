@@ -4,6 +4,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import Loader from "../../Loader/Loader";
 import MovieSearchForm from "../../MovieSearchForm/MovieSearchForm";
 import MovieList from "../../MovieList/MovieList";
+import css from "./Movies.module.css";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -37,7 +38,7 @@ const Movies = () => {
 
   return (
     <div>
-      <h2>Movies</h2>
+      <h2 className={css.text}>Movies</h2>
       <MovieSearchForm onSearch={handleSearch} />
       {isLoading && <Loader />}
       {movies.length > 0 ? (

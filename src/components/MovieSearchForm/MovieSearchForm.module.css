@@ -1,0 +1,28 @@
+.input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 20px;
+  border: 1px solid #111;
+  outline: none;
+}
+.input:hover,
+.input:focus {
+  border: 1px solid orange;
+}
+
+.btn {
+  width: 100px;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid orange;
+  background-color: orange;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}

@@ -11,6 +11,7 @@ import Loader from "../../Loader/Loader";
 import Cast from "../../Cast/Cast";
 import Reviews from "../../Reviews /Reviews ";
 import { fetchMovieDetails } from "../../services/Api";
+import css from "./MovieDetails.module.css";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -32,29 +33,47 @@ const MovieDetails = () => {
 
   const imageUrl = movieDetails.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`
-    : none;
+    : "none";
   const userScore = Math.round(movieDetails.vote_average * 10);
 
   return (
     <div>
-      <Link to={goBackBtn.current}>Go back</Link>
-      <div>
-        <img src={imageUrl} alt={movieDetails.title} />
-        <div>
-          <h2>{movieDetails.title}</h2>
-          <p>User Score: {userScore}%</p>
-          <h3>Overview</h3>
-          <p>{movieDetails.overview}</p>
-          <h3>Genres</h3>
-          <p>{movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
+      <Link to={goBackBtn.current} className={css.btn}>
+        Go back
+      </Link>
+      <div className={css.container}>
+        <img src={imageUrl} alt={movieDetails.title} className={css.img} />
+        <div className={css.wrapp}>
+          <h2 className={css.title}>{movieDetails.title}</h2>
+          <p className={css.text}>User Score: {userScore}%</p>
+          <h3 className={css.title}>Overview</h3>
+          <p className={css.text}>{movieDetails.overview}</p>
+          <h3 className={css.title}>Genres</h3>
+          <p className={css.text}>
+            {movieDetails.genres.map((genre) => genre.name).join(", ")}
+          </p>
         </div>
       </div>
-      <ul>
+      <ul className={css.list}>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink
+            to="cast"
+            className={({ isActive }) =>
+              `${css.navLink} ${isActive ? css.active : ""}`
+            }
+          >
+            Cast
+          </NavLink>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <NavLink
+            to="reviews"
+            className={({ isActive }) =>
+              `${css.navLink} ${isActive ? css.active : ""}`
+            }
+          >
+            Reviews
+          </NavLink>
         </li>
       </ul>
       <div>
