@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, lazy } from "react";
 import {
   useParams,
   Link,
@@ -7,11 +7,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Loader from "../../Loader/Loader";
-import Cast from "../../Cast/Cast";
-import Reviews from "../../Reviews /Reviews ";
 import { fetchMovieDetails } from "../../services/Api";
 import css from "./MovieDetails.module.css";
+
+const Reviews = lazy(() => import("../../Reviews /Reviews "));
+const Cast = lazy(() => import("../../Cast/Cast"));
+const Loader = lazy(() => import("../../Loader/Loader"));
 
 const MovieDetails = () => {
   const { movieId } = useParams();

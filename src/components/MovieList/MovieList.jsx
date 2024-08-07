@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import css from "./MovieList.module.css";
+import none from "../../images/none.jpeg";
 
 const MovieList = ({ movies, location }) => {
   return (
@@ -7,11 +8,16 @@ const MovieList = ({ movies, location }) => {
       {movies.map((movie) => (
         <li key={movie.id} className={css.item}>
           <img
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+                : none
+            }
             alt={movie.title}
             width="300"
             className={css.img}
           />
+
           <NavLink
             state={{ from: location }}
             to={`/movies/${movie.id}`}

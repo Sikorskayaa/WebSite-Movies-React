@@ -1,0 +1,25 @@
+.container {
+  margin-top: 65px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.goBtn {
+  padding: 15px;
+  color: #fff;
+  border: 1px solid orange;
+  background-color: orange;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color linear 300ms;
+  margin-left: 650px;
+}
+
+.goBtn:hover {
+  color: orange;
+  background-color: #fff;
+}

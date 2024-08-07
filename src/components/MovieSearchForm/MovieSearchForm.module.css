@@ -18,8 +18,13 @@
   background-color: orange;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color linear 300ms;
 }
 
+.btn:hover {
+  color: orange;
+  background-color: #fff;
+}
 .container {
   display: flex;
   justify-content: center;

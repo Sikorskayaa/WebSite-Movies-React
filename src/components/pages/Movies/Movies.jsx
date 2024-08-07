@@ -5,6 +5,7 @@ import Loader from "../../Loader/Loader";
 import MovieSearchForm from "../../MovieSearchForm/MovieSearchForm";
 import MovieList from "../../MovieList/MovieList";
 import css from "./Movies.module.css";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -44,7 +45,7 @@ const Movies = () => {
       {movies.length > 0 ? (
         <MovieList movies={movies} location={location} />
       ) : (
-        searched && <p>No movies found for the given keyword.</p>
+        searched && <NotFoundPage />
       )}
     </div>
   );

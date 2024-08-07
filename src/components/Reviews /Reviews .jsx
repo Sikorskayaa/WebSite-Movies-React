@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "../services/Api";
 import Loader from "../Loader/Loader";
+import css from "./Reviews.module.css";
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -34,7 +35,7 @@ const Reviews = () => {
           ))}
         </ul>
       ) : (
-        <p>No reviews found for this movie.</p>
+        <p className={css.text}>No reviews found for this movie.</p>
       )}
     </div>
   );

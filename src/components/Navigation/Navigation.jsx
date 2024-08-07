@@ -1,6 +1,9 @@
 import { NavLink, Outlet } from "react-router-dom";
-import css from "./Layout.module.css";
-const Layout = () => {
+import { Suspense } from "react";
+import css from "./Navigation.module.css";
+import Loader from "../Loader/Loader";
+
+const Navigation = () => {
   return (
     <div>
       <header>
@@ -22,8 +25,10 @@ const Layout = () => {
           Movies
         </NavLink>
       </header>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
-export default Layout;
+export default Navigation;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Outlet } from "react-router-dom";
 import { fetchCast } from "../services/Api";
 import css from "./Cast.module.css";
+import none from "../../images/none.jpeg";
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -30,7 +31,7 @@ export const Cast = () => {
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w200/${actor.profile_path}`
-                  : "none"
+                  : none
               }
               alt={actor.name}
               width="200"

@@ -1,17 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home/Home";
-import Movies from "./components/pages/Movies/Movies";
-import Layout from "./components/Layout/Layout";
-import MovieDetails from "./components/pages/MovieDetails/MovieDetails";
-import Cast from "./components/Cast/Cast";
-import Reviews from "./components/Reviews /Reviews ";
-import "./App.css";
+import React, { lazy, Suspense } from "react";
+import Loader from "./components/Loader/Loader";
 
-function App() {
+const Home = lazy(() => import("./components/pages/Home/Home"));
+const Movies = lazy(() => import("./components/pages/Movies/Movies"));
+const Navigation = lazy(() => import("./components/Navigation/Navigation"));
+const MovieDetails = lazy(() =>
+  import("./components/pages/MovieDetails/MovieDetails")
+);
+const Cast = lazy(() => import("./components/Cast/Cast"));
+const Reviews = lazy(() => import("./components/Reviews /Reviews "));
+
+const App = () => {
   return (
-    <div className="app">
+    <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="/movies/" element={<Movies />} />
           <Route path="/movies/:movieId/*" element={<MovieDetails />}>
@@ -20,7 +24,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    </div>
+    </Suspense>
   );
-}
+};
 export default App;
