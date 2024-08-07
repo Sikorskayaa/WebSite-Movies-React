@@ -1,9 +1,9 @@
-import { fetchMoviesApi } from "../../services/Api";
+import { fetchMoviesApi } from "../../components/services/Api";
 import { useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
-import Loader from "../../Loader/Loader";
-import MovieSearchForm from "../../MovieSearchForm/MovieSearchForm";
-import MovieList from "../../MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
+import MovieSearchForm from "../../components/MovieSearchForm/MovieSearchForm";
+import MovieList from "../../components/MovieList/MovieList";
 import css from "./Movies.module.css";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
