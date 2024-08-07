@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviews } from "../services/Api";
 import Loader from "../Loader/Loader";
-import css from "./Reviews.module.css";
+import css from "./MovieReviews.module.css";
 
 const Reviews = () => {
   const { movieId } = useParams();

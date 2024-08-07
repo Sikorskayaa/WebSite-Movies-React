@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Outlet } from "react-router-dom";
 import { fetchCast } from "../services/Api";
-import css from "./Cast.module.css";
+import css from "./MovieCast.module.css";
 import none from "../../images/none.jpeg";
 
-export const Cast = () => {
+export const MovieCast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
@@ -46,4 +46,4 @@ export const Cast = () => {
   );
 };
 
-export default Cast;
+export default MovieCast;

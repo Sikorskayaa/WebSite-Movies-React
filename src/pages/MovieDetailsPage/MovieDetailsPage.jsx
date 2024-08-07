@@ -8,10 +8,12 @@ import {
   Route,
 } from "react-router-dom";
 import { fetchMovieDetails } from "../../components/services/Api";
-import css from "./MovieDetails.module.css";
+import css from "./MovieDetailsPage.module.css";
 
-const Reviews = lazy(() => import("../../components/Reviews /Reviews "));
-const Cast = lazy(() => import("../../components/Cast/Cast"));
+const Reviews = lazy(() =>
+  import("../../components/MovieReviews/MovieReviews")
+);
+const Cast = lazy(() => import("../../components/MovieCast/MovieCast"));
 const Loader = lazy(() => import("../../components/Loader/Loader"));
 
 const MovieDetails = () => {

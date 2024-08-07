@@ -4,7 +4,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import MovieSearchForm from "../../components/MovieSearchForm/MovieSearchForm";
 import MovieList from "../../components/MovieList/MovieList";
-import css from "./Movies.module.css";
+import css from "./MoviesPage.module.css";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 const Movies = () => {
