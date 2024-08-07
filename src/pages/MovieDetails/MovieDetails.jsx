@@ -7,12 +7,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { fetchMovieDetails } from "../../services/Api";
+import { fetchMovieDetails } from "../../components/services/Api";
 import css from "./MovieDetails.module.css";
 
-const Reviews = lazy(() => import("../../Reviews /Reviews "));
-const Cast = lazy(() => import("../../Cast/Cast"));
-const Loader = lazy(() => import("../../Loader/Loader"));
+const Reviews = lazy(() => import("../../components/Reviews /Reviews "));
+const Cast = lazy(() => import("../../components/Cast/Cast"));
+const Loader = lazy(() => import("../../components/Loader/Loader"));
 
 const MovieDetails = () => {
   const { movieId } = useParams();
