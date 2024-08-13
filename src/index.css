@@ -1,6 +1,7 @@
 /* src/index.css */
 
 body {
+  background-image: url("./images/background-img.jpg");
   font-family: sans-serif;
   line-height: 1.5;
 }

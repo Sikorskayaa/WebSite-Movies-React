@@ -1,5 +1,5 @@
 header {
-  box-shadow: 0 5px 5px rgb(201, 196, 196);
+  box-shadow: 0 10px 10px rgb(255, 253, 253);
   padding: 20px;
   margin-bottom: 40px;
 }
@@ -12,5 +12,5 @@ header {
 }
 
 .active {
-  color: orange;
+  color: #fff;
 }
