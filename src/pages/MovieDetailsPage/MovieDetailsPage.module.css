@@ -1,17 +1,24 @@
 .wrapp {
-  margin-left: 20px;
-  padding: 20px;
+  max-width: 100%;
+  margin-left: 45px;
+  padding: 60px;
+  border-radius: 30px;
+  background-color: #ffffff55;
 }
 
 .img {
-  max-width: 250px;
+  max-width: 300px;
   width: 100%;
   border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 10px;
+  background-color: #ffffff5b;
 }
 .container {
   display: flex;
-  padding-left: 20px;
-  margin-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 65px;
   margin-bottom: 50px;
 }
 
